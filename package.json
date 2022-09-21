@@ -2,13 +2,13 @@
   "name": "zikus-project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "http://ak-code-90.github.io/zikus",
+  "homepage": "https://ak-code-90.github.io/Zikus",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "predeploy" : "npm run build",
-    "deploy" : "gh-pages-d build",
+    "deploy" : "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
