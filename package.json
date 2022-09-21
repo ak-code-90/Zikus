@@ -1,8 +1,8 @@
 {
   "name": "zikus-project",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
-  "homepage": "https://ak-code-90.github.io/Zikus",
+  "homepage": "https://ak-code-90.github.io/Zikus/",
   "type": "module",
   "scripts": {
     "dev": "vite",
