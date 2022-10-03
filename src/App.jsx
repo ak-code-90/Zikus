@@ -17,7 +17,7 @@ function App() {
       </div>
       <h1>Zikus <br></br> <span className='slogan'>Écoutez Partagez Vibrez</span> </h1>
       <div className="card">
-        <button onClick={() => setAppMessage((appMessage) => "Comming Soon")}>
+        <button onClick={() => setAppMessage((appMessage) => "Coming Soon")}>
           {appMessage}
         </button>
        
