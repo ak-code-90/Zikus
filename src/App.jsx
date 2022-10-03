@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+      <div className='logoWrapper'>
         <a href="https://developer.spotify.com/discover/" target="_blank">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png" className="logo" alt="Vite logo" />
         </a>
@@ -22,7 +22,7 @@ function App() {
         </button>
        
         <p style={{fontSize:'21px'}}>
-          Partager des playlists spotify avec vos amis, commenter les nouveaux sons à la une !
+          Partagez des playlists spotify avec vos amis, commentez les nouveaux sons à la une !
           <br /> Et recevez des notifications lorsque vos playlists sont mises à jour
         </p>
       </div>
