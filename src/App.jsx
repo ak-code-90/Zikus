@@ -20,14 +20,14 @@ function App() {
         <button onClick={() => setAppMessage((appMessage) => "Comming Soon")}>
           {appMessage}
         </button>
-        <h2>Le meilleur de la musique, ensemble </h2>
-        <p>
+       
+        <p style={{fontSize:'21px'}}>
           Partager des playlists spotify avec vos amis, commenter les nouveaux sons à la une !
-          et recevez des notifications lorsque vos playlists sont mises à jour
+          <br /> Et recevez des notifications lorsque vos playlists sont mises à jour
         </p>
       </div>
       <p className="read-the-docs">
-        Cette application est conçu avec React ainsi que l'API de spotify,
+        Cette application est conçue avec React ainsi que l'API de Spotify,
         cliquer sur les logos pour en apprendre plus sur ces technologies 
       </p>
     </div>

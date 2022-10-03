@@ -35,10 +35,7 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  background: linear-gradient(to right, #00d8ff, #58e758);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+
 }
 
 button {
