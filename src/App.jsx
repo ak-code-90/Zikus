@@ -28,7 +28,7 @@ function App() {
       </div>
       <p className="read-the-docs">
         Cette application est conçue avec React ainsi que l'API de Spotify,
-        cliquer sur les logos pour en apprendre plus sur ces technologies 
+        cliquez sur les logos pour en apprendre plus sur ces technologies 
       </p>
     </div>
   )
