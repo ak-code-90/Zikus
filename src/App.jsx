@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { Routes, Route, Link } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import PlaylistsPage from './pages/PlaylistsPage'
 
 function App() {
   const [appMessage, setAppMessage] = useState('Get Started')
@@ -17,18 +19,18 @@ function App() {
       </div>
       <h1>Zikus <br></br> <span className='slogan'>Écoutez Partagez Vibrez</span> </h1>
       <div className="card">
-        <button onClick={() => setAppMessage((appMessage) => "Coming Soon")}>
-          {appMessage}
+        <button onClick={() => setAppMessage("Coming Soon")}>
+          <Link to={'/playlists'}>{appMessage}</Link>
         </button>
-       
-        <p style={{fontSize:'21px'}}>
+
+        <p style={{ fontSize: '21px' }}>
           Partagez des playlists spotify avec vos amis, commentez les nouveaux sons à la une !
           <br /> Et recevez des notifications lorsque vos playlists sont mises à jour
         </p>
       </div>
       <p className="read-the-docs">
         Cette application est conçue avec React ainsi que l'API de Spotify,
-        cliquez sur les logos pour en apprendre plus sur ces technologies 
+        cliquez sur les logos pour en apprendre plus sur ces technologies
       </p>
     </div>
   )
