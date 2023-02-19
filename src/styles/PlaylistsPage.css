@@ -5,7 +5,8 @@
 }
 
 .globalContainer {
-    background-color: teal;
+    background-color: #242424;
+    color: #fff;
     min-width: 100vw;
     min-height: 100vh;
 }
