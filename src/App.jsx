@@ -1,11 +1,12 @@
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { Link } from 'react-router-dom';
 
 function App() {
 
   const client_id = '435a00f8faec4c7f9dbe6186a0d606b7';
   const client_secret = '1a398417576c48b08b445f0d1e7903cb';
-  const redirect_uri = 'http://localhost:5173/playlists';
+  const redirect_uri = 'https://zikus/vercel/app/playlists';
   const authorization_code = 'AUTHORIZATION_CODE';
   const scope = 'user-read-email user-read-private user-library-modify user-library-read playlist-modify-public user-read-playback-position user-top-read user-read-recently-played user-follow-modify user-follow-read playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public app-remote-control streaming user-read-playback-state user-modify-playback-state user-read-currently-playing ugc-image-upload'
   const state = 'fklzjlkcel132sukizdjezk12'
@@ -29,6 +30,7 @@ function App() {
       </div>
       <h1>Zikus <br></br> <span className='slogan'>Écoutez Partagez Vibrez</span> </h1>
       <div className="card">
+        <button><Link to='/playlists'>PPage</Link></button>
         <button onClick={getAccessToken}>Get Started</button>
         <p style={{ fontSize: '21px' }}>
           Partagez des playlists spotify avec vos amis, commentez les nouveaux sons à la une !
