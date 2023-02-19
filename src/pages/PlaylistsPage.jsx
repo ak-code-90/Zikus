@@ -1,19 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/PlaylistsPage.css'
-// import SpotifyWebApi from 'spotify-web-api-js'
+import SpotifyWebApi from 'spotify-web-api-js'
 
+// importer dotenv et sécuriser toutes les donner sensibles ✅
+// utiliser useParams pour recupérer les paramètres de l'URL ✅
+// verifier que le params state de l'url est bien celui de notre application sinon rediriger ✅
 
 
 export default function PlaylistsPage() {
-
+    const [code, setCode] = useState('')
+    const [spotifyState, setSpotifyState] = useState('')
     const [allPlaylists, setAllPlaylists] = useState([]);
 
-    // const spotifyApi = new SpotifyWebApi({
-    //     clientId: '435a00f8faec4c7f9dbe6186a0d606b7',
-    //     clientSecret: '1a398417576c48b08b445f0d1e7903cb'
-    // })
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search)
+        setCode(urlParams.get('code'));
+        setSpotifyState(urlParams.get('state'))
+    }, [])
 
-    // const myToken = 'BQAKDtmO7sbWR4EjgaPOT3duvW66Reu3vRIRozF9xTAjtaaKRZJmQ559kA3Z8iPytFqAymtRtRGz9E28ss-UpRm_-PndHcnASa3yACo5ay4VpgStFxkHbQG73Zrw06IyVOKtD4rnHbZxNopZWOJmxHdsEiYIowWA8Qrhf7r_wQGYeWgNwvOPxKxOZCP9DsfY_JP6-WXma6uwz8DMCedGLddnD7e1vuudyRSweSoeP2w8G3k7DQD6m-5LGhgMifCsQwi3aAfXSpKZNlg0iFZcZUGS02bE8VUQbVBTYRKJpUCkic45uO1iV0c2Tg'
+    useEffect(() => {
+        if (spotifyState === import.meta.env.VITE_STATE) {
+            alert('Ok Ok')
+        }
+        else {
+            alert('accès refusé')
+            window.location = 'http://localhost:5173'
+        }
+
+    }, [spotifyState])
+
+    const spotifyApi = new SpotifyWebApi({
+        clientId: import.meta.env.VITE_CLIENT_ID,
+        clientSecret: import.meta.env.VITE_CLIENT_SECRET
+    })
+
 
     // async function getAllPlaylists() {
     //     spotifyApi.setAccessToken(myToken);
@@ -30,6 +50,7 @@ export default function PlaylistsPage() {
     //     console.log(allPlaylists);
     // }, [allPlaylists])
 
+    { }
     return (
         <div className='globalContainer'>
             Hello World

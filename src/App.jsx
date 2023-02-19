@@ -4,15 +4,14 @@ import { Link } from 'react-router-dom';
 
 function App() {
 
-  const client_id = '435a00f8faec4c7f9dbe6186a0d606b7';
-  const client_secret = '1a398417576c48b08b445f0d1e7903cb';
-  const redirect_uri = 'https://zikus.vercel.app/playlists';
-  const authorization_code = 'AUTHORIZATION_CODE';
+  const client_id = import.meta.env.VITE_CLIENT_ID;
+  const state = import.meta.env.VITE_STATE
+  //const redirect_uri = 'https://zikus.vercel.app/playlists';
+  const redirect_uri = 'http://localhost:5173/playlists';
   const scope = 'user-read-email user-read-private user-library-modify user-library-read playlist-modify-public user-read-playback-position user-top-read user-read-recently-played user-follow-modify user-follow-read playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public app-remote-control streaming user-read-playback-state user-modify-playback-state user-read-currently-playing ugc-image-upload'
-  const state = 'fklzjlkcel132sukizdjezk12'
 
   const getAccessToken = () => {
-    window.location = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code&state=${state}&scope=${scope}&show_dialog=true`
+    window.location = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code&state=${state}&scope=${scope}`
   };
 
 
