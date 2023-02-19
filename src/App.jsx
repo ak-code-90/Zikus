@@ -13,7 +13,6 @@ function App() {
 
   const getAccessToken = () => {
     window.location = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code&state=${state}&scope=${scope}&show_dialog=true`
-
   };
 
 
@@ -30,7 +29,6 @@ function App() {
       </div>
       <h1>Zikus <br></br> <span className='slogan'>Écoutez Partagez Vibrez</span> </h1>
       <div className="card">
-        <button><Link to='/playlists'>PlaylistsPage</Link></button>
         <button onClick={getAccessToken}>Get Started</button>
         <p style={{ fontSize: '21px' }}>
           Partagez des playlists spotify avec vos amis, commentez les nouveaux sons à la une !
