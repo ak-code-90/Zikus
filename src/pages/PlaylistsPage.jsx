@@ -2,17 +2,23 @@ import React, { useEffect, useState } from 'react';
 import '../styles/PlaylistsPage.css'
 import SpotifyWebApi from 'spotify-web-api-js'
 import { Link, Navigate, redirect } from 'react-router-dom';
+import Navbar from '../components/Navbar'
 
 
 // utiliser useParams pour recupérer les paramètres de l'URL ✅
 // verifier que le params state de l'url est bien celui de notre application sinon rediriger ✅
 // utiliser le code pour récuperer l'access token ✅
-// faire un appel api avec le token pour récuperer toutes les playlists 
-// afficher les playlists partagées
-// creer une page playlist details avec toutes les pistes d'une playlist et afficher cette page lors du clique sur la playlist
+// faire un appel api avec le token pour récuperer toutes les playlists ✅
+// afficher les playlists partagées ✅
+// créer une page playlist details avec toutes les pistes d'une playlist et afficher cette page lors du clique sur la playlist
 
-//refactor tout le process d'acces à l'access token dans un custom hook
-//même chose pour les calls vers la Spotify API (endpoint en paramètre)
+// créer une belle UI qui garde une cohérence sur toutes les pages. 
+// refactor tout le process de récupération du token d'accès dans un custom hook
+// même chose pour les calls vers la Spotify API (endpoint en paramètre)
+// refactor les composants pour qu'ils soient réutilisables
+// refactor pr mieux gerer le CSS
+// refactor pour gérer les states avec Redux
+
 
 
 export default function PlaylistsPage() {
@@ -63,7 +69,7 @@ export default function PlaylistsPage() {
     async function getAllPlaylists() {
         spotifyApi.setAccessToken(token);
         const { items } = await spotifyApi.getUserPlaylists();
-        setAllPlaylists(items)
+        setAllPlaylists(items.filter(playlist => playlist.collaborative === true))
     }
 
     useEffect(() => {
@@ -74,10 +80,18 @@ export default function PlaylistsPage() {
 
     return (
         <>
-
-            <div className='globalContainer'>
-                <h2>Hello World</h2>
-            </div>
+            <Navbar />
+            {allPlaylists.map(playlist =>
+                <div key={playlist.id} className="playlist-card">
+                    {playlist && (
+                        <>
+                            <img src={playlist.images[0].url} alt={playlist.name} />
+                            <h2>{playlist.name}</h2>
+                            <p>By {playlist.owner.display_name}</p>
+                        </>
+                    )}
+                </div>
+            )}
         </>
     )
 

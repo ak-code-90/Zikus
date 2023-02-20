@@ -6,8 +6,8 @@ function App() {
 
   const client_id = import.meta.env.VITE_CLIENT_ID;
   const state = import.meta.env.VITE_STATE
-  //const redirect_uri = 'https://zikus.vercel.app/playlists';
-  const redirect_uri = 'http://localhost:5173/playlists';
+  const redirect_uri = 'https://zikus.vercel.app/playlists';
+  // const redirect_uri = 'http://localhost:5173/playlists';
   const scope = 'ugc-image-upload playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public'
 
   const getAccessToken = () => {
