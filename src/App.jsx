@@ -8,10 +8,10 @@ function App() {
   const state = import.meta.env.VITE_STATE
   //const redirect_uri = 'https://zikus.vercel.app/playlists';
   const redirect_uri = 'http://localhost:5173/playlists';
-  const scope = 'user-read-email user-read-private user-library-modify user-library-read playlist-modify-public user-read-playback-position user-top-read user-read-recently-played user-follow-modify user-follow-read playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public app-remote-control streaming user-read-playback-state user-modify-playback-state user-read-currently-playing ugc-image-upload'
+  const scope = 'ugc-image-upload playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public'
 
   const getAccessToken = () => {
-    window.location = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code&state=${state}&scope=${scope}`
+    window.location = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code&state=${state}&show_dialog=true&scope=playlist-read-private playlist-read-collaborative`
   };
 
 
