@@ -76,7 +76,6 @@ export default function PlaylistsPage() {
     useEffect(() => {
         if (token) {
             getAllPlaylists()
-            conso
         }
     }, [token]);
 
