@@ -43,7 +43,8 @@ export default function PlaylistsPage() {
         if (code) {
             const data = new URLSearchParams();
             data.append("grant_type", "authorization_code");
-            data.append("redirect_uri", "http://localhost:5173/playlists");
+            data.append("redirect_uri", "https://zikus.vercel.app/playlists");
+            //  data.append("redirect_uri", "http://localhost:5173/playlists");
             data.append("code", code);
 
             fetch('https://accounts.spotify.com/api/token', {
@@ -75,6 +76,7 @@ export default function PlaylistsPage() {
     useEffect(() => {
         if (token) {
             getAllPlaylists()
+            conso
         }
     }, [token]);
 
