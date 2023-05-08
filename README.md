@@ -1,7 +1,6 @@
 # Zikus
 
-Zikus est un projet personnel qui a pour but premier de permettre la réception de notifications sur vos playlists partagées Spotify.
-En utilisant l'API de Spotify, cette appli permet la gestion des playlists, l'ajout de commentaires pour chaque sur vos chansons et elle vous délivre pleins d'informations supplémentaires sur vos usages sur Spotify
+Zikus est un projet personnel visant principalement à vous permettre de recevoir des notifications pour vos playlists partagées sur Spotify. Grâce à l'utilisation de l'API de Spotify, cette application vous permet de gérer vos playlists, d'ajouter des commentaires sur chaque titre et de découvrir des informations détaillées sur votre utilisation de Spotify.
 
 ## Installation
 
